@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frage 1</title>
+    <title>Frage 4</title>
 	<style>
         body {
             margin: 0;
@@ -74,22 +74,10 @@
             margin: 20px;
             gap: 20px;
         }
-        .fraction-container {
+        #number-input {
             display: inline-block;
-            text-align: center;
             margin: 20px 0;
-        }
-        .fraction {
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .fraction input {
-            width: 40px;
-            text-align: center;
-        }
-        .fraction-line {
-            border-top: 2px solid white;
-            margin: 5px 0;
+            width: 80px;
         }
         #result {
             margin-top: 15px;
@@ -105,18 +93,12 @@
 	
 	<div class="content">
 		<div id="info-box">
-			Gegeben ist eine Gerade, die auf den Punkten A(2|3) und B(8|11) liegt. Wie groß ist die Steigung der Geraden?
+			IPv4-Adressen bestehen aus 4 Zahlen, die jeweils mit einem Punkt separiert sind. Diese Zahlen können von 0 bis 255 reichen. Wie viele Kombinationen an IPv4-Adressen gibt es?
 		</div>
         
         <div class="answer-box">
-            <h3>Eingabe: Steigung =</h3>
-            <div class="fraction-container">
-                <div class="fraction">
-                    <input type="number" id="numerator" placeholder="">
-                    <div class="fraction-line"></div>
-                    <input type="number" id="denominator" placeholder="">
-                </div>
-            </div>
+            <h3>Anzahl Kombinationen:</h3>
+            <input type="number" id="number-input" placeholder="">
         </div>
         
         <button onclick="checkAnswer()">Prüfen</button>
@@ -133,19 +115,17 @@
     
     <script>
         function checkAnswer() {
-            // Zähler und Nenner auslesen
-            const numerator = parseFloat(document.getElementById('numerator').value);
-            const denominator = parseFloat(document.getElementById('denominator').value);
+            // Anzahl auslesen
+            const amount = parseFloat(document.getElementById('number-input').value);
 
-            // Erwartete Bruch-Werte
-            const expectedNumerator = 4;
-            const expectedDenominator = 3;
+            // Erwartete Anzahl
+            const expectedAmount = 4228250625;
 
             // Prüfen
-            if (numerator === expectedNumerator && denominator === expectedDenominator) {
+            if (amount === expectedAmount) {
                 // Richtige Antwort
                 document.getElementById('result').style.color = "green";
-                document.getElementById('result').textContent = "Die Antwort ist richtig! Die Zahl lautet: 17";
+                document.getElementById('result').textContent = "Die Antwort ist richtig! Die Zahl lautet: 73";
             } else {
                 // Falsche Antwort
                 document.getElementById('result').style.color = "red";
